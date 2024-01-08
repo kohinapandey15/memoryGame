@@ -1,0 +1,29 @@
+<!-- game-twelve.component.html -->
+<div class="grid">
+  <div class="card-container">
+    <div *ngFor="let card of cards" class="card">
+      <img
+        *ngIf="!card.isFlipped && !card.isMatched"
+        src="./assets/images/questionMark.png"
+        alt="Card Back"
+        (click)="flipCard(card)"
+      />
+      <img
+        *ngIf="card.isFlipped || card.isMatched"
+        [src]="card.imageUrl"
+        alt="Card Front"
+      />
+    </div>
+  </div>
+  <div class="game-info">
+    <div>Moves: {{ moveCount }} </div>
+    <div>Misses: {{ missCount }} </div>
+    <div>Rounds: {{ roundCount }} </div>
+    <button (click)="resetGame()">Reset Game</button>
+
+    <!-- Display congratulations message when the game is completed -->
+    <div *ngIf="isGameCompleted()">
+      <p>Congratulations! You have completed the game!</p>
+    </div>
+  </div>
+</div>

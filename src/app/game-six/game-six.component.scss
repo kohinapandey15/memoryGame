@@ -1,0 +1,72 @@
+/* game-twelve.component.scss */
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ecf0f1; /* Lighter shade */
+  color: #333;
+  font-family: 'Arial', sans-serif;
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjusted to 3 columns for 6 cards */
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .card {
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .game-info {
+    display: flex;
+    flex-direction: column; /* Updated to column layout */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjusted margin-bottom */
+
+    div {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #bdc3c7; /* Lighter shade */
+      color: #333;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-left: 10px; /* Added margin to the left */
+
+      &:hover {
+        background-color: #95a5a6; /* Lighter shade */
+      }
+    }
+
+    /* Style for congratulations message */
+    p {
+      color: #27ae60; /* Green color */
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+  }
+}

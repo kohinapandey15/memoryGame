@@ -1,10 +1,18 @@
+// app.component.ts
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'memoryGame';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  
+  selectGame(cardCount: number) {
+    console.log(`Selected game with ${cardCount} cards`);
+    
+  }
 }
